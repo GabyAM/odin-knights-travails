@@ -87,3 +87,49 @@ function knightMoves(start, end) {
 		(update: repeat until the queue contains the end value)
 	*/
 }
+
+function test() {
+	function testFunction(start, end, expectedLength) {
+		const func = knightMoves(start, end);
+		if (func.length > expectedLength) {
+			console.log("Error: The sequence is longer than expected");
+		} else {
+			console.log(
+				`Passed: the sequence from ${start} to ${end} is ${func}`
+			);
+		}
+	}
+
+	let start;
+	let end;
+
+	start = [0, 0];
+	end = [1, 2];
+	testFunction(start, end, 2);
+
+	start = [2, 3];
+	end = [4, 4];
+	testFunction(start, end, 2);
+
+	start = [7, 7];
+	end = [6, 5];
+	testFunction(start, end, 2);
+
+	start = [3, 5];
+	end = [7, 1];
+	testFunction(start, end, 5);
+
+	start = [0, 0];
+	end = [7, 7];
+	testFunction(start, end, 8);
+
+	start = [2, 1];
+	end = [6, 6];
+	testFunction(start, end, 5);
+
+	start = [1, 4];
+	end = [7, 0];
+	testFunction(start, end, 6);
+}
+
+test();
